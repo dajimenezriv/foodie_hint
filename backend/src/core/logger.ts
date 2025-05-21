@@ -13,10 +13,7 @@ export type TLoggerBody = {
   [key: string]: unknown;
 };
 
-const prepareBody = (
-  level: "debug" | "info" | "warn" | "error" | "fatal",
-  rawBody: TLoggerBody
-) => {
+const prepareBody = (level: "debug" | "info" | "warn" | "error" | "fatal", rawBody: TLoggerBody) => {
   const { tag, msg, ...rest1 } = rawBody;
 
   rawBody = {
@@ -30,12 +27,7 @@ const prepareBody = (
   };
 
   const { attributes, ...rest2 } = rawBody;
-  const body = inspect(rest2, {
-    colors: true,
-    depth: Infinity,
-    breakLength: Infinity,
-  });
-
+  const body = inspect(rest2, { colors: true, depth: Infinity, breakLength: Infinity });
   return { attributes, body };
 };
 

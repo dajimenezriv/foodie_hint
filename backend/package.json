@@ -10,10 +10,17 @@
     "vitest": "vitest",
     "vitest:once": "vitest run",
     "vitest:one": "vitest run related x",
-    "vitest:cov": "vitest run --coverage"
+    "vitest:cov": "vitest run --coverage",
+    "========== Linter ==========": "",
+    "lint": "eslint . --ext .ts,.tsx --max-warnings 13",
+    "lint:fix": "npm run run lint --fix",
+    "format": "prettier src tests --check",
+    "format:fix": "prettier src tests --write"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@vitest/coverage-v8": "^3.1.4",
+    "prettier": "^3.5.3",
     "prisma": "^6.8.2",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.1.4"
