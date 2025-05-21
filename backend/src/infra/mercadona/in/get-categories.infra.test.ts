@@ -1,3 +1,7 @@
-it("", () => {
-  expect(2 + 2).toBe(4);
+import { getCategories } from "./get-categories";
+
+describe("get-categories", () => {
+  it("Should return categories", async () => {
+    await getCategories();
+  });
 });
